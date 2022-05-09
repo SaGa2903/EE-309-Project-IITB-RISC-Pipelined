@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity decoder is
+entity ir is
     port(
         input: in std_logic_vector(15 downto 0);
         ir5to0: out std_logic_vector(5 downto 0);
@@ -14,7 +14,7 @@ entity decoder is
     );
 end entity;
 
-architecture arch of decoder is
+architecture arch of ir is
 begin
 
     ir5to0 <= input(5 downto 0);
