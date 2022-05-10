@@ -6,7 +6,7 @@ entity rr is
     port(
         EN,clk, reset: in std_logic;
         ir_in, se_in, se_plus_pc_in, 
-        ls_in, pc_inc_in: in std_logic_vector(15 downto 0);
+        ls_in, pc_inc_in, d3_in: in std_logic_vector(15 downto 0);
         ir_out, rf_d1_out, rf_d2_out, ls_out, se_out,
         se_plus_pc_out, pc_inc_out: out std_logic_vector(15 downto 0);
     );
@@ -26,7 +26,7 @@ architecture arch of rr is
 
 begin
     ir_sig<= ir_in;
-    d3_in_sig <= d3;
+    d3_in_sig <= d3_in;
 
     rf_block: reg_file
     port map(

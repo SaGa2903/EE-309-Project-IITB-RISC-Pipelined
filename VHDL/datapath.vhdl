@@ -42,7 +42,7 @@ architecture arch of datapath is
         port(
             EN,clk, reset: in std_logic;
             ir_in, se_in, se_plus_pc_in, 
-            ls_in, pc_inc_in: in std_logic_vector(15 downto 0);
+            ls_in, pc_inc_in, d3_in: in std_logic_vector(15 downto 0);
             ir_out, rf_d1_out, rf_d2_out, ls_out, se_out,
             se_plus_pc_out, pc_inc_out: out std_logic_vector(15 downto 0);
         );
@@ -85,12 +85,18 @@ architecture arch of datapath is
     signal ir_out_sig_1, pc_out_sig_1, pc_inc_out_sig_1: std_logic_vector(15 downto 0);
     signal reset, clk: std_logic;
 
-    signal EN_sig_2,alu_cy_in_sig_2, alu_z_in_sig_2: std_logic;
-    signal ir_in_sig_2, alu_or_eq_in_sig_2, rf_d1_in_sig_2, rf_d2_in_sig_2, ls_in_sig_2, se_in_sig_2, 
-    se_plus_pc_in_sig_2, pc_inc_in_sig_2: std_logic_vector(15 downto 0);
-    signal ir_out_sig_2, alu_or_eq_out_sig_2, rf_d1_out_sig_2, rf_d2_out_sig_2, ls_out_sig_2, se_out_sig_2,
-    se_plus_pc_out_sig_2, pc_inc_out_sig_2: std_logic_vector(15 downto 0);
-    signal alu_cy_out_sig_2, alu_z_out_sig_2: std_logic;
+    signal EN_sig_2: in std_logic;
+    signal ir_in_sig_2, se_in_sig_2, se_plus_pc_in_sig_2, 
+    ls_in_sig_2, pc_inc_in_sig_2: std_logic_vector(15 downto 0);
+    signal ir_out_sig_2, se_out_sig_2, se_plus_pc_out_sig_2, 
+    ls_out_sig_2, pc_inc_out_sig_2: std_logic_vector(15 downto 0);
+
+    -- signal EN_sig_2,alu_cy_in_sig_2, alu_z_in_sig_2: std_logic;
+    -- signal ir_in_sig_2, alu_or_eq_in_sig_2, rf_d1_in_sig_2, rf_d2_in_sig_2, ls_in_sig_2, se_in_sig_2, 
+    -- se_plus_pc_in_sig_2, pc_inc_in_sig_2: std_logic_vector(15 downto 0);
+    -- signal ir_out_sig_2, alu_or_eq_out_sig_2, rf_d1_out_sig_2, rf_d2_out_sig_2, ls_out_sig_2, se_out_sig_2,
+    -- se_plus_pc_out_sig_2, pc_inc_out_sig_2: std_logic_vector(15 downto 0);
+    -- signal alu_cy_out_sig_2, alu_z_out_sig_2: std_logic;
 
     signal EN_sig_3: std_logic;
     signal ir_in_sig_3, rf_d1_in_sig_3, rf_d2_in_sig_3, ls_in_sig_3, se_in_sig_3, 
@@ -112,9 +118,17 @@ architecture arch of datapath is
     se_plus_pc_out_sig_5, pc_inc_out_sig_5, mem_d_out_sig_5: std_logic_vector(15 downto 0);
     signal alu_cy_out_sig_5, alu_z_out_sig_5: out std_logic;  
 
+    signal d3_in_sig: std_logic_vector(15 downto 0)
 
     begin
     
+        EN_sig_1<='1';
+        EN_sig_2<='1';
+        EN_sig_3<='1';
+        EN_sig_4<='1';
+        EN_sig_5<='1';
+
+
         inst_fetch: ins_f
         port map(
         EN=>EN_sig_1,
@@ -179,7 +193,7 @@ architecture arch of datapath is
 
         reg_read: rr
         port map(
-            EN=>EN_sig_3,
+            EN=>EN_sig_2,
             clk=>clk, 
             reset=>reset,
             ir_in=>ir_out_sig_2,
@@ -189,6 +203,7 @@ architecture arch of datapath is
             se_in=>se_out_sig_2, 
             se_plus_pc_in=>se_plus_pc_out_sig_2, 
             pc_inc_in=>pc_inc_out_sig_2,
+            d3_in=>d3_sig,
             ir_out=>ir_in_sig_3, 
             rf_d1_out=>rf_d1_in_sig_3, 
             rf_d2_out=>rf_d2_in_sig_3, 
@@ -221,7 +236,7 @@ architecture arch of datapath is
 
         exe_stage: ex 
         port map(
-            EN=>EN_sig_4,
+            EN=>EN_sig_3,
             clk=>clk, 
             reset=>reset,
             ir_in=>ir_out_sig_3, 
@@ -272,29 +287,30 @@ architecture arch of datapath is
 
         mem_access: mem 
         port map(
-            EN,
-            alu_cy_in, 
-            alu_z_in,clk, 
-            reset,
-            ir_in, 
-            alu_or_eq_in, 
-            rf_d1_in, 
-            rf_d2_in, 
-            ls_in, 
-            se_in, 
-            se_plus_pc_in, 
-            pc_inc_in    
-            ir_out, 
-            alu_or_eq_out, 
-            rf_d1_out, 
-            rf_d2_out, 
-            ls_out, 
-            se_out,
-            se_plus_pc_out, 
-            pc_inc_out, 
-            mem_d_out
-            alu_cy_out, 
-            alu_z_out
+            EN=>EN_sig_4,
+            alu_cy_in=> alu_cy_out_sig_4, 
+            alu_z_in=>alu_z_out_sig_4,
+            clk=> clk, 
+            reset=>clk,
+            ir_in=>ir_out_sig_4, 
+            alu_or_eq_in=> alu_or_eq_out_sig_4, 
+            rf_d1_in=> rf_d1_out_sig_4, 
+            rf_d2_in=>rf_d2_out_sig_4, 
+            ls_in=>ls_out_sig_4, 
+            se_in=>se_plus_pc_out_sig_4, 
+            se_plus_pc_in=>se_plus_pc_out_sig_4, 
+            pc_inc_in=> pc_inc_out_sig_4,    
+            ir_out=>ir_in_sig_5, 
+            alu_or_eq_out=>alu_or_eq_in_sig_5, 
+            rf_d1_out=>rf_d1_in_sig_5, 
+            rf_d2_out=>rf_d2_in_sig_5, 
+            ls_out=>ls_in_sig_5, 
+            se_out=>se_in_sig_5,
+            se_plus_pc_out=>se_plus_pc_in_sig_5, 
+            pc_inc_out=>pc_inc_in_sig_5, 
+            mem_d_out=>mem_d_in_sig_5,
+            alu_cy_out=>alu_cy_in_sig_5, 
+            alu_z_out=>alu_z_in_sig_5
         );
 
         pip5: pip_reg5
@@ -336,5 +352,5 @@ architecture arch of datapath is
             pc_inc_in=>se_plus_pc_out_sig_5, 
             mem_d_in=>mem_d_out_sig_5,
             opcode=>ir_out_sig_5(15 downto 12),
-            output=>    
+            output=> d3_in_sig 
         );
