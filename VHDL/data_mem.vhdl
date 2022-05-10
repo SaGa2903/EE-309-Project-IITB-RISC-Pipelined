@@ -7,7 +7,7 @@ port(
     mem_a, mem_din: in std_logic_vector(15 downto 0);
     clk: in std_logic;
     opcode: in std_logic_vector(3 downto 0);
-    d_out: out std_logic_vector(15 downto 0)
+    d_out: out std_logic_vector(815 downto 0)
 );
 end entity data_mem;
 
