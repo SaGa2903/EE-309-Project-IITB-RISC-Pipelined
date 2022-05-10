@@ -9,7 +9,7 @@ entity ex is
         se_plus_pc_in, pc_inc_in: in std_logic_vector(15 downto 0);
         ir_out, alu_or_eq_out, rf_d1_out, rf_d2_out, ls_out, se_out,
         se_plus_pc_out, pc_inc_out: out std_logic_vector(15 downto 0);
-        alu_cy_out, alu_z_out: out std_logic
+        alu_cy_out, alu_z_out: out std_logic;
     );
 end entity;
 
@@ -49,7 +49,7 @@ architecture arch of ex is
     signal alu_b_sig, ir_sig, shift1_out_sig, alu_out_sig, eq_out_sig : std_logic_vector(15 downto 0);
     signal cin_sig, zin_sig, cout_sig, zout_sig: std_logic := '0';
 begin
-    ir_sig <= ir_in;
+    ir_sig <= ir_in
 
     r1: process(CLK,EN, reset)
 
@@ -60,28 +60,28 @@ begin
         end if;
 
 
-        if (CLK'event and CLK='0') then   
-		  
+        if CLK'event and CLK='0' then   
             pc_inc_out <= pc_inc_in;
             ir_out <= ir_in;
             ls_out <= ls_in;
             se_out <= se_in;
-            se_plus_pc_out <= se_plus_pc_in; 
+            se_plus_pc_out <= se_plus_pc_in, 
             rf_d1_out <= rf_d1_in;
             rf_d2_out <= rf_d2_in;
             alu_cy_out <= cout_sig;
             alu_z_out <= zout_sig;
-			end if;
+
         if ir_sig(15 downto 12) = "1000" then
             alu_or_eq_out <= eq_out_sig;
         else alu_or_eq_out <= alu_out_sig;
         end if;
 
-         if EN ='1' then
-			 cout_sig <= cin_sig;
-			 zout_sig <= zin_sig;
-			end if;		  
- end process;
+            if EN ='1' then
+                cout_sig <= cin_sig;
+                zout_sig <= zin_sig;
+            end if;
+        end if ;
+    end process;
 
     shift1_block: Shift1
     port map(
@@ -113,4 +113,4 @@ begin
         eq4 => se_plus_pc_in,
         eq_out => eq_out_sig
     );
-end architecture;
+

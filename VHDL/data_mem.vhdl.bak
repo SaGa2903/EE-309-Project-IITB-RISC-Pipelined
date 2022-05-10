@@ -24,11 +24,11 @@ begin
 
         if opcode = "0111" then --LW
             add_in<= mem_a;
-            wb_en <= '0';
+            wb_en = '0';
         elsif opcode = "0101" then --SW
             add_in<= mem_a;
             d_in <= mem_din;
-            wb_en <= '1';
+            wb_en = '1';
         end if;
         
         -- write_back

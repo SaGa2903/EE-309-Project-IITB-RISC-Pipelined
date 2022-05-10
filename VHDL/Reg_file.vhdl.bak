@@ -7,7 +7,7 @@ entity reg_file is
 port (
     CLK ,reset: in std_logic;
     ir, d3: in std_logic_vector(15 downto 0);
-    d1, d2 : out std_logic_vector(15 downto 0)
+    d1, d2 : out std_logic_vector(15 downto 0);
   );
 end entity reg_file;
 
@@ -35,7 +35,7 @@ architecture arch of reg_file is
     elsif ir(15 downto 12) = "0000" then
         a3 <= ir(8 downto 6);
         wb_en <= '1';
-    end if;
+    end if
 
     -- wr: process(a1,CLK, rf_cw(6))
     --   begin

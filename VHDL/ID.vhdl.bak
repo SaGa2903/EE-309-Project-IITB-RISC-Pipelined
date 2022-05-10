@@ -53,7 +53,7 @@ begin
     se_alu_block: se_alu
     port map(
         input_1 => se_in_sig,
-        input_2 => pc_in,
+        input_2 => pc_out,
         output => se_plus_pc_out
     );
 
