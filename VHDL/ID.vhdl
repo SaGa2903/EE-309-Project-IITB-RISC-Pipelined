@@ -32,7 +32,7 @@ architecture arch of id is
 
     component Shift7 is
         port (
-            input : in std_logic_vector (15 downto 0);
+            input : in std_logic_vector (8 downto 0);
             output : out std_logic_vector (15 downto 0)
         );
     end component;
@@ -44,7 +44,7 @@ begin
 
     se_block: SE
     port map(
-        opcode => ir_sig(15 downto 0),
+        opcode => ir_sig(15 downto 12),
         input_1 => ir_sig(5 downto 0),
         input_2 => ir_sig(8 downto 0),
         output => se_out_sig

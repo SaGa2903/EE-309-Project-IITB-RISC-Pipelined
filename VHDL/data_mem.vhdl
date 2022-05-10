@@ -7,7 +7,7 @@ port(
     mem_a, mem_din: in std_logic_vector(15 downto 0);
     clk: in std_logic;
     opcode: in std_logic_vector(3 downto 0);
-    d_out: out std_logic_vector(815 downto 0)
+    d_out: out std_logic_vector(15 downto 0)
 );
 end entity data_mem;
 
@@ -15,10 +15,10 @@ architecture arch of data_mem is
     signal add_in, d_in: std_logic_vector(15 downto 0);
     signal wb_en: std_logic;
     type mem_block is array (0 to 255) of std_logic_vector (15 downto 0); --512 Byte memory
-    signal data_temp: mem_block := ("0001101100011000","1100101011010011","0011000001010000", others => (others =>'0'));
+    signal data_temp: mem_block := (others => (others =>'0'));
 begin
 
-    p1: process(d1, t1, t3, mem_cw)
+    p1: process(clk)
     
     begin
 

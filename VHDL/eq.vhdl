@@ -14,7 +14,7 @@ end entity;
 
 architecture arch of eq is
 begin
-    process
+    p1: process(eq1, eq2)
     begin
 	if eq1=eq2 then
 		eq_out <= eq4;

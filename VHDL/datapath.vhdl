@@ -188,17 +188,16 @@ architecture arch of datapath is
 
         reg_read: rr
         port map(
+
             EN=>EN_sig_2,
             clk=>clk, 
             reset=>reset,
             ir_in=>ir_out_sig_2,
-            rf_d1_in=>rf_d1_out_sig_2, 
-            rf_d2_in=>rf_d2_out_sig_2, 
             ls_in=>ls_out_sig_2, 
             se_in=>se_out_sig_2, 
             se_plus_pc_in=>se_plus_pc_out_sig_2, 
             pc_inc_in=>pc_inc_out_sig_2,
-            d3_in=>d3_sig,
+            d3_in=>d3_in_sig,
             ir_out=>ir_in_sig_3, 
             rf_d1_out=>rf_d1_in_sig_3, 
             rf_d2_out=>rf_d2_in_sig_3, 

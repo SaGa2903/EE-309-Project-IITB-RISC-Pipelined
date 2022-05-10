@@ -100,8 +100,8 @@ begin
         cz => ir_sig(1 downto 0),
         Cin=> cin_sig,
         Zin=> zin_sig,
-        CY => cout_sig,
-        Z => zout_sig,
+        CY => cin_sig,
+        Z => zin_sig,
         output=> alu_out_sig
     );
     

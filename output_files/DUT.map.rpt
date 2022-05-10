@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DUT
-Tue May 10 23:26:02 2022
+Tue May 10 23:58:15 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,23 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "datapath:instance|WB:wr_back"
+ 10. Port Connectivity Checks: "datapath:instance|pip_reg5:pip5"
+ 11. Port Connectivity Checks: "datapath:instance|MEM:mem_access"
+ 12. Port Connectivity Checks: "datapath:instance|pip_reg4:pip4"
+ 13. Port Connectivity Checks: "datapath:instance|ex:exe_stage"
+ 14. Port Connectivity Checks: "datapath:instance|pip_reg3:pip3"
+ 15. Port Connectivity Checks: "datapath:instance|rr:reg_read"
+ 16. Port Connectivity Checks: "datapath:instance|pip_reg2:pip2"
+ 17. Port Connectivity Checks: "datapath:instance|id:ins_dec|SE:se_block"
+ 18. Port Connectivity Checks: "datapath:instance|id:ins_dec"
+ 19. Port Connectivity Checks: "datapath:instance|pip_reg1:pip1"
+ 20. Port Connectivity Checks: "datapath:instance|ins_f:inst_fetch"
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -37,11 +53,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue May 10 23:26:02 2022           ;
+; Analysis & Synthesis Status ; Successful - Tue May 10 23:58:15 2022       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; DUT                                         ;
 ; Top-level Entity Name       ; DUT                                         ;
 ; Family                      ; MAX V                                       ;
+; Total logic elements        ; 0                                           ;
+; Total pins                  ; 2                                           ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
 
 
@@ -121,8 +141,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -132,109 +152,503 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                            ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+; VHDL/WB.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl                 ;         ;
+; VHDL/Sign_Extender.vhdl          ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl      ;         ;
+; VHDL/shift1.vhdl                 ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/shift1.vhdl             ;         ;
+; VHDL/SE_ALU.vhdl                 ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/SE_ALU.vhdl             ;         ;
+; VHDL/RR.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/RR.vhdl                 ;         ;
+; VHDL/reg_pkg.vhdl                ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl            ;         ;
+; VHDL/Reg_file.vhdl               ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl           ;         ;
+; VHDL/pipeline_registers.vhdl     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl ;         ;
+; VHDL/pc_inc.vhdl                 ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc_inc.vhdl             ;         ;
+; VHDL/pc.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl                 ;         ;
+; VHDL/MEM.vhdl                    ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/MEM.vhdl                ;         ;
+; VHDL/ls.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ls.vhdl                 ;         ;
+; VHDL/IR.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IR.vhdl                 ;         ;
+; VHDL/IF.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl                 ;         ;
+; VHDL/ID.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl                 ;         ;
+; VHDL/EX.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl                 ;         ;
+; VHDL/eq.vhdl                     ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/eq.vhdl                 ;         ;
+; VHDL/DUT.vhdl                    ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/DUT.vhdl                ;         ;
+; VHDL/datapath.vhdl               ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl           ;         ;
+; VHDL/data_mem.vhdl               ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl           ;         ;
+; VHDL/code_mem.vhdl               ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/code_mem.vhdl           ;         ;
+; VHDL/alu.vhdl                    ; yes             ; User VHDL File  ; C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl                ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 2     ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |DUT                       ; 0 (0)       ; 0            ; 0          ; 2    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |DUT                ; DUT         ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|WB:wr_back" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                   ;
++------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|pip_reg5:pip5"                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; en            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; ir_out[11..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rf_d1_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rf_d2_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; se_out        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc_inc_out    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; alu_cy_out    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; alu_z_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|MEM:mem_access" ;
++------+-------+----------+------------------------------------+
+; Port ; Type  ; Severity ; Details                            ;
++------+-------+----------+------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                       ;
++------+-------+----------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|pip_reg4:pip4"                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; en     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; se_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|ex:exe_stage" ;
++------+-------+----------+----------------------------------+
+; Port ; Type  ; Severity ; Details                          ;
++------+-------+----------+----------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                     ;
++------+-------+----------+----------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|pip_reg3:pip3" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                      ;
++------+-------+----------+-----------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|rr:reg_read" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                    ;
++------+-------+----------+---------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|pip_reg2:pip2" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                      ;
++------+-------+----------+-----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|id:ins_dec|SE:se_block"                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|id:ins_dec" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                   ;
++------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|pip_reg1:pip1" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                      ;
++------+-------+----------+-----------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "datapath:instance|ins_f:inst_fetch" ;
++------+-------+----------+--------------------------------------+
+; Port ; Type  ; Severity ; Details                              ;
++------+-------+----------+--------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                         ;
++------+-------+----------+--------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue May 10 23:25:51 2022
+    Info: Processing started: Tue May 10 23:58:07 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IITB_RISC_Pipeline -c DUT
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/wb.vhdl
-    Info (12022): Found design unit 1: WB-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 14
-    Info (12023): Found entity 1: WB File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 5
+    Info (12022): Found design unit 1: WB-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 14
+    Info (12023): Found entity 1: WB File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/sign_extender.vhdl
-    Info (12022): Found design unit 1: SE-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 15
-    Info (12023): Found entity 1: SE File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 5
+    Info (12022): Found design unit 1: SE-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 15
+    Info (12023): Found entity 1: SE File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/shift1.vhdl
-    Info (12022): Found design unit 1: Shift1-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/shift1.vhdl Line: 14
-    Info (12023): Found entity 1: Shift1 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/shift1.vhdl Line: 5
+    Info (12022): Found design unit 1: Shift1-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/shift1.vhdl Line: 14
+    Info (12023): Found entity 1: Shift1 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/shift1.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/se_alu.vhdl
-    Info (12022): Found design unit 1: se_alu-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/SE_ALU.vhdl Line: 13
-    Info (12023): Found entity 1: se_alu File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/SE_ALU.vhdl Line: 5
+    Info (12022): Found design unit 1: se_alu-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/SE_ALU.vhdl Line: 13
+    Info (12023): Found entity 1: se_alu File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/SE_ALU.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/rr.vhdl
-    Info (12022): Found design unit 1: rr-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/RR.vhdl Line: 15
-    Info (12023): Found entity 1: rr File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/RR.vhdl Line: 5
+    Info (12022): Found design unit 1: rr-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/RR.vhdl Line: 15
+    Info (12023): Found entity 1: rr File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/RR.vhdl Line: 5
 Info (12021): Found 5 design units, including 2 entities, in source file vhdl/reg_pkg.vhdl
-    Info (12022): Found design unit 1: misc File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 6
-    Info (12022): Found design unit 2: reg_16-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 39
-    Info (12022): Found design unit 3: reg_1-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 67
-    Info (12023): Found entity 1: reg_16 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 30
-    Info (12023): Found entity 2: reg_1 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 58
+    Info (12022): Found design unit 1: misc File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 6
+    Info (12022): Found design unit 2: reg_16-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 39
+    Info (12022): Found design unit 3: reg_1-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 67
+    Info (12023): Found entity 1: reg_16 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 30
+    Info (12023): Found entity 2: reg_1 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/reg_pkg.vhdl Line: 58
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/reg_file.vhdl
-    Info (12022): Found design unit 1: reg_file-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 15
-    Info (12023): Found entity 1: reg_file File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 6
+    Info (12022): Found design unit 1: reg_file-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 15
+    Info (12023): Found entity 1: reg_file File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 6
 Info (12021): Found 11 design units, including 5 entities, in source file vhdl/pipeline_registers.vhdl
-    Info (12022): Found design unit 1: pip_reg File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 7
-    Info (12022): Found design unit 2: pip_reg1-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 76
-    Info (12022): Found design unit 3: pip_reg2-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 130
-    Info (12022): Found design unit 4: pip_reg3-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 204
-    Info (12022): Found design unit 5: pip_reg4-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 296
-    Info (12022): Found design unit 6: pip_reg5-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 416
-    Info (12023): Found entity 1: pip_reg1 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 68
-    Info (12023): Found entity 2: pip_reg2 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 120
-    Info (12023): Found entity 3: pip_reg3 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 194
-    Info (12023): Found entity 4: pip_reg4 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 285
-    Info (12023): Found entity 5: pip_reg5 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 405
+    Info (12022): Found design unit 1: pip_reg File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 7
+    Info (12022): Found design unit 2: pip_reg1-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 76
+    Info (12022): Found design unit 3: pip_reg2-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 130
+    Info (12022): Found design unit 4: pip_reg3-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 204
+    Info (12022): Found design unit 5: pip_reg4-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 296
+    Info (12022): Found design unit 6: pip_reg5-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 416
+    Info (12023): Found entity 1: pip_reg1 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 68
+    Info (12023): Found entity 2: pip_reg2 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 120
+    Info (12023): Found entity 3: pip_reg3 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 194
+    Info (12023): Found entity 4: pip_reg4 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 285
+    Info (12023): Found entity 5: pip_reg5 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 405
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/pc_inc.vhdl
-    Info (12022): Found design unit 1: pc_inc-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc_inc.vhdl Line: 13
-    Info (12023): Found entity 1: pc_inc File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc_inc.vhdl Line: 5
+    Info (12022): Found design unit 1: pc_inc-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc_inc.vhdl Line: 13
+    Info (12023): Found entity 1: pc_inc File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc_inc.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/pc.vhdl
-    Info (12022): Found design unit 1: pc-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 15
-    Info (12023): Found entity 1: pc File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 5
+    Info (12022): Found design unit 1: pc-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 15
+    Info (12023): Found entity 1: pc File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/mem.vhdl
-    Info (12022): Found design unit 1: MEM-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/MEM.vhdl Line: 17
-    Info (12023): Found entity 1: MEM File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/MEM.vhdl Line: 5
+    Info (12022): Found design unit 1: MEM-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/MEM.vhdl Line: 17
+    Info (12023): Found entity 1: MEM File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/MEM.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/ls.vhdl
-    Info (12022): Found design unit 1: Shift7-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/ls.vhdl Line: 12
-    Info (12023): Found entity 1: Shift7 File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/ls.vhdl Line: 5
+    Info (12022): Found design unit 1: Shift7-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ls.vhdl Line: 12
+    Info (12023): Found entity 1: Shift7 File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ls.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/ir.vhdl
-    Info (12022): Found design unit 1: ir-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/IR.vhdl Line: 17
-    Info (12023): Found entity 1: ir File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/IR.vhdl Line: 5
+    Info (12022): Found design unit 1: ir-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IR.vhdl Line: 17
+    Info (12023): Found entity 1: ir File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IR.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/if.vhdl
-    Info (12022): Found design unit 1: ins_f-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl Line: 15
-    Info (12023): Found entity 1: ins_f File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl Line: 5
+    Info (12022): Found design unit 1: ins_f-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl Line: 15
+    Info (12023): Found entity 1: ins_f File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/id.vhdl
-    Info (12022): Found design unit 1: id-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 13
-    Info (12023): Found entity 1: id File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 5
+    Info (12022): Found design unit 1: id-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 13
+    Info (12023): Found entity 1: id File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/ex.vhdl
-    Info (12022): Found design unit 1: ex-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 16
-    Info (12023): Found entity 1: ex File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 5
+    Info (12022): Found design unit 1: ex-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 16
+    Info (12023): Found entity 1: ex File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/eq.vhdl
-    Info (12022): Found design unit 1: eq-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/eq.vhdl Line: 15
-    Info (12023): Found entity 1: eq File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/eq.vhdl Line: 4
+    Info (12022): Found design unit 1: eq-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/eq.vhdl Line: 15
+    Info (12023): Found entity 1: eq File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/eq.vhdl Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/dut.vhdl
-    Info (12022): Found design unit 1: DUT-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/DUT.vhdl Line: 10
-    Info (12023): Found entity 1: DUT File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/DUT.vhdl Line: 5
+    Info (12022): Found design unit 1: DUT-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/DUT.vhdl Line: 10
+    Info (12023): Found entity 1: DUT File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/DUT.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/datapath.vhdl
-    Info (12022): Found design unit 1: datapath-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 16
-    Info (12023): Found entity 1: datapath File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 8
+    Info (12022): Found design unit 1: datapath-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 16
+    Info (12023): Found entity 1: datapath File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/data_mem.vhdl
-    Info (12022): Found design unit 1: data_mem-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 14
-    Info (12023): Found entity 1: data_mem File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 5
+    Info (12022): Found design unit 1: data_mem-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 14
+    Info (12023): Found entity 1: data_mem File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/code_mem.vhdl
-    Info (12022): Found design unit 1: code_mem-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/code_mem.vhdl Line: 13
-    Info (12023): Found entity 1: code_mem File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/code_mem.vhdl Line: 5
+    Info (12022): Found design unit 1: code_mem-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/code_mem.vhdl Line: 13
+    Info (12023): Found entity 1: code_mem File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/code_mem.vhdl Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/alu.vhdl
-    Info (12022): Found design unit 1: alu-arch File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 20
-    Info (12023): Found entity 1: alu File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 6
-Error (10349): VHDL Association List error at datapath.vhdl(195): formal "rf_d1_in" does not exist File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 195
-Error (10346): VHDL error at datapath.vhdl(189): formal port or parameter "se_in" must have actual or default value File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 189
-Error (10784): HDL error at datapath.vhdl(39): see declaration for object "se_in" File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 39
-Error (10346): VHDL error at datapath.vhdl(189): formal port or parameter "se_plus_pc_in" must have actual or default value File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 189
-Error (10784): HDL error at datapath.vhdl(39): see declaration for object "se_plus_pc_in" File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 39
-Error (10346): VHDL error at datapath.vhdl(189): formal port or parameter "ls_in" must have actual or default value File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 189
-Error (10784): HDL error at datapath.vhdl(40): see declaration for object "ls_in" File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 40
-Error (10346): VHDL error at datapath.vhdl(189): formal port or parameter "pc_inc_in" must have actual or default value File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 189
-Error (10784): HDL error at datapath.vhdl(40): see declaration for object "pc_inc_in" File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 40
-Error (10346): VHDL error at datapath.vhdl(189): formal port or parameter "d3_in" must have actual or default value File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 189
-Error (10784): HDL error at datapath.vhdl(40): see declaration for object "d3_in" File: D:/IIT BOMBAY/SEM-4/EE309/IITB_RISC/EE309-Project-IITB-RISC_Pipeline/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 40
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 11 errors, 1 warning
-    Error: Peak virtual memory: 4763 megabytes
-    Error: Processing ended: Tue May 10 23:26:02 2022
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:27
+    Info (12022): Found design unit 1: alu-arch File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 20
+    Info (12023): Found entity 1: alu File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 6
+Info (12127): Elaborating entity "DUT" for the top level hierarchy
+Info (12128): Elaborating entity "datapath" for hierarchy "datapath:instance" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/DUT.vhdl Line: 21
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhdl(105): object "se_out_sig_4" assigned a value but never read File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 105
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhdl(112): object "rf_d1_out_sig_5" assigned a value but never read File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 112
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhdl(112): object "rf_d2_out_sig_5" assigned a value but never read File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 112
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhdl(112): object "se_out_sig_5" assigned a value but never read File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 112
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhdl(113): object "pc_inc_out_sig_5" assigned a value but never read File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 113
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhdl(114): object "alu_cy_out_sig_5" assigned a value but never read File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 114
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhdl(114): object "alu_z_out_sig_5" assigned a value but never read File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 114
+Info (12128): Elaborating entity "ins_f" for hierarchy "datapath:instance|ins_f:inst_fetch" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 127
+Warning (10541): VHDL Signal Declaration warning at IF.vhdl(11): used implicit default value for signal "pc_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl Line: 11
+Info (12128): Elaborating entity "pc" for hierarchy "datapath:instance|ins_f:inst_fetch|pc:pc_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl Line: 46
+Warning (10492): VHDL Process Statement warning at pc.vhdl(20): signal "opcode4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 20
+Warning (10492): VHDL Process Statement warning at pc.vhdl(21): signal "alu_or_eq_4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 21
+Warning (10492): VHDL Process Statement warning at pc.vhdl(22): signal "opcode3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 22
+Warning (10492): VHDL Process Statement warning at pc.vhdl(23): signal "rf_d2_3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 23
+Warning (10492): VHDL Process Statement warning at pc.vhdl(24): signal "opcode2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 24
+Warning (10492): VHDL Process Statement warning at pc.vhdl(25): signal "se_plus_pc_2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 25
+Warning (10492): VHDL Process Statement warning at pc.vhdl(26): signal "pc_inc_1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pc.vhdl Line: 26
+Info (12128): Elaborating entity "pc_inc" for hierarchy "datapath:instance|ins_f:inst_fetch|pc_inc:pc_inc_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl Line: 59
+Info (12128): Elaborating entity "code_mem" for hierarchy "datapath:instance|ins_f:inst_fetch|code_mem:code_mem_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/IF.vhdl Line: 65
+Info (12128): Elaborating entity "pip_reg1" for hierarchy "datapath:instance|pip_reg1:pip1" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 144
+Info (12128): Elaborating entity "reg_16" for hierarchy "datapath:instance|pip_reg1:pip1|reg_16:ir_reg" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 82
+Info (12128): Elaborating entity "id" for hierarchy "datapath:instance|id:ins_dec" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 157
+Warning (10541): VHDL Signal Declaration warning at ID.vhdl(9): used implicit default value for signal "se_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 9
+Warning (10541): VHDL Signal Declaration warning at ID.vhdl(40): used implicit default value for signal "se_in_sig" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 40
+Warning (10036): Verilog HDL or VHDL warning at ID.vhdl(40): object "se_out_sig" assigned a value but never read File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 40
+Info (12128): Elaborating entity "SE" for hierarchy "datapath:instance|id:ins_dec|SE:se_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 45
+Warning (10631): VHDL Process Statement warning at Sign_Extender.vhdl(18): inferring latch(es) for signal or variable "output", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[0]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[1]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[2]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[3]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[4]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[5]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[6]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[7]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[8]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[9]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[10]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[11]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[12]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[13]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[14]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (10041): Inferred latch for "output[15]" at Sign_Extender.vhdl(18) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Sign_Extender.vhdl Line: 18
+Info (12128): Elaborating entity "se_alu" for hierarchy "datapath:instance|id:ins_dec|se_alu:se_alu_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 53
+Info (12128): Elaborating entity "Shift7" for hierarchy "datapath:instance|id:ins_dec|Shift7:ls_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/ID.vhdl Line: 60
+Info (12128): Elaborating entity "pip_reg2" for hierarchy "datapath:instance|pip_reg2:pip2" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 172
+Info (12128): Elaborating entity "rr" for hierarchy "datapath:instance|rr:reg_read" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 189
+Info (12128): Elaborating entity "reg_file" for hierarchy "datapath:instance|rr:reg_read|reg_file:rf_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/RR.vhdl Line: 31
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(75): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 75
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(77): signal "r0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 77
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(79): signal "r1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 79
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(81): signal "r2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 81
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(83): signal "r3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 83
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(85): signal "r4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 85
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(87): signal "r5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 87
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(89): signal "r6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 89
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(91): signal "r7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 91
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(95): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 95
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(97): signal "r0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 97
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(99): signal "r1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 99
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(101): signal "r2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 101
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(103): signal "r3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 103
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(105): signal "r4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 105
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(107): signal "r5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 107
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(109): signal "r6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 109
+Warning (10492): VHDL Process Statement warning at Reg_file.vhdl(111): signal "r7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 111
+Warning (10631): VHDL Process Statement warning at Reg_file.vhdl(24): inferring latch(es) for signal or variable "a3", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 24
+Warning (10631): VHDL Process Statement warning at Reg_file.vhdl(24): inferring latch(es) for signal or variable "wb_en", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 24
+Info (10041): Inferred latch for "wb_en" at Reg_file.vhdl(24) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 24
+Info (10041): Inferred latch for "a3[0]" at Reg_file.vhdl(24) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 24
+Info (10041): Inferred latch for "a3[1]" at Reg_file.vhdl(24) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 24
+Info (10041): Inferred latch for "a3[2]" at Reg_file.vhdl(24) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/Reg_file.vhdl Line: 24
+Info (12128): Elaborating entity "pip_reg3" for hierarchy "datapath:instance|pip_reg3:pip3" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 210
+Info (12128): Elaborating entity "ex" for hierarchy "datapath:instance|ex:exe_stage" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 231
+Warning (10492): VHDL Process Statement warning at EX.vhdl(57): signal "ir_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 57
+Warning (10492): VHDL Process Statement warning at EX.vhdl(58): signal "se_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 58
+Warning (10492): VHDL Process Statement warning at EX.vhdl(59): signal "shift1_out_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 59
+Warning (10492): VHDL Process Statement warning at EX.vhdl(75): signal "ir_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 75
+Warning (10492): VHDL Process Statement warning at EX.vhdl(76): signal "eq_out_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 76
+Warning (10492): VHDL Process Statement warning at EX.vhdl(77): signal "alu_out_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 77
+Warning (10492): VHDL Process Statement warning at EX.vhdl(81): signal "cin_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 81
+Warning (10492): VHDL Process Statement warning at EX.vhdl(82): signal "zin_sig" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 82
+Warning (10631): VHDL Process Statement warning at EX.vhdl(54): inferring latch(es) for signal or variable "cout_sig", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 54
+Warning (10631): VHDL Process Statement warning at EX.vhdl(54): inferring latch(es) for signal or variable "zout_sig", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 54
+Info (10041): Inferred latch for "zout_sig" at EX.vhdl(54) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 54
+Info (10041): Inferred latch for "cout_sig" at EX.vhdl(54) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 54
+Info (12128): Elaborating entity "Shift1" for hierarchy "datapath:instance|ex:exe_stage|Shift1:shift1_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 86
+Warning (10492): VHDL Process Statement warning at shift1.vhdl(18): signal "cz" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/shift1.vhdl Line: 18
+Info (12128): Elaborating entity "alu" for hierarchy "datapath:instance|ex:exe_stage|alu:alu_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 94
+Warning (10492): VHDL Process Statement warning at alu.vhdl(35): signal "temp_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 35
+Warning (10492): VHDL Process Statement warning at alu.vhdl(35): signal "temp_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 35
+Warning (10492): VHDL Process Statement warning at alu.vhdl(37): signal "temp_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 37
+Warning (10492): VHDL Process Statement warning at alu.vhdl(37): signal "temp_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 37
+Warning (10492): VHDL Process Statement warning at alu.vhdl(39): signal "temp_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 39
+Warning (10492): VHDL Process Statement warning at alu.vhdl(39): signal "temp_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 39
+Warning (10492): VHDL Process Statement warning at alu.vhdl(42): signal "temp_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 42
+Warning (10492): VHDL Process Statement warning at alu.vhdl(42): signal "temp_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 42
+Warning (10492): VHDL Process Statement warning at alu.vhdl(43): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 43
+Warning (10492): VHDL Process Statement warning at alu.vhdl(45): signal "temp_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 45
+Warning (10492): VHDL Process Statement warning at alu.vhdl(45): signal "temp_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 45
+Warning (10492): VHDL Process Statement warning at alu.vhdl(46): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 46
+Warning (10492): VHDL Process Statement warning at alu.vhdl(48): signal "temp_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 48
+Warning (10492): VHDL Process Statement warning at alu.vhdl(48): signal "temp_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 48
+Warning (10492): VHDL Process Statement warning at alu.vhdl(49): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 49
+Warning (10492): VHDL Process Statement warning at alu.vhdl(51): signal "temp_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 51
+Warning (10492): VHDL Process Statement warning at alu.vhdl(51): signal "temp_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 51
+Warning (10492): VHDL Process Statement warning at alu.vhdl(52): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 52
+Warning (10492): VHDL Process Statement warning at alu.vhdl(54): signal "temp_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 54
+Warning (10492): VHDL Process Statement warning at alu.vhdl(54): signal "temp_b" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 54
+Warning (10492): VHDL Process Statement warning at alu.vhdl(57): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 57
+Warning (10492): VHDL Process Statement warning at alu.vhdl(62): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 62
+Warning (10631): VHDL Process Statement warning at alu.vhdl(25): inferring latch(es) for signal or variable "alu_out", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[0]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[1]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[2]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[3]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[4]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[5]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[6]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[7]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[8]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[9]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[10]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[11]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[12]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[13]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[14]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[15]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (10041): Inferred latch for "alu_out[16]" at alu.vhdl(25) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/alu.vhdl Line: 25
+Info (12128): Elaborating entity "eq" for hierarchy "datapath:instance|ex:exe_stage|eq:eq_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/EX.vhdl Line: 108
+Warning (10492): VHDL Process Statement warning at eq.vhdl(20): signal "eq4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/eq.vhdl Line: 20
+Warning (10492): VHDL Process Statement warning at eq.vhdl(22): signal "eq3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/eq.vhdl Line: 22
+Info (12128): Elaborating entity "pip_reg4" for hierarchy "datapath:instance|pip_reg4:pip4" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 255
+Info (12128): Elaborating entity "reg_1" for hierarchy "datapath:instance|pip_reg4:pip4|reg_1:alu_cy_reg" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/pipeline_registers.vhdl Line: 376
+Info (12128): Elaborating entity "MEM" for hierarchy "datapath:instance|MEM:mem_access" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 282
+Info (12128): Elaborating entity "data_mem" for hierarchy "datapath:instance|MEM:mem_access|data_mem:data_mem_block" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/MEM.vhdl Line: 31
+Warning (10492): VHDL Process Statement warning at data_mem.vhdl(25): signal "opcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 25
+Warning (10492): VHDL Process Statement warning at data_mem.vhdl(26): signal "mem_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 26
+Warning (10492): VHDL Process Statement warning at data_mem.vhdl(28): signal "opcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 28
+Warning (10492): VHDL Process Statement warning at data_mem.vhdl(29): signal "mem_a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 29
+Warning (10492): VHDL Process Statement warning at data_mem.vhdl(30): signal "mem_din" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 30
+Warning (10631): VHDL Process Statement warning at data_mem.vhdl(21): inferring latch(es) for signal or variable "add_in", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Warning (10631): VHDL Process Statement warning at data_mem.vhdl(21): inferring latch(es) for signal or variable "wb_en", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Warning (10631): VHDL Process Statement warning at data_mem.vhdl(21): inferring latch(es) for signal or variable "d_in", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[0]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[1]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[2]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[3]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[4]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[5]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[6]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[7]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[8]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[9]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[10]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[11]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[12]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[13]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[14]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "d_in[15]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "wb_en" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "add_in[0]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "add_in[1]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "add_in[2]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "add_in[3]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "add_in[4]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "add_in[5]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "add_in[6]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (10041): Inferred latch for "add_in[7]" at data_mem.vhdl(21) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/data_mem.vhdl Line: 21
+Info (12128): Elaborating entity "pip_reg5" for hierarchy "datapath:instance|pip_reg5:pip5" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 310
+Info (12128): Elaborating entity "WB" for hierarchy "datapath:instance|WB:wr_back" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/datapath.vhdl Line: 339
+Warning (10492): VHDL Process Statement warning at WB.vhdl(23): signal "opcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 23
+Warning (10492): VHDL Process Statement warning at WB.vhdl(24): signal "alu_or_eq_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 24
+Warning (10492): VHDL Process Statement warning at WB.vhdl(25): signal "opcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 25
+Warning (10492): VHDL Process Statement warning at WB.vhdl(26): signal "ls_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 26
+Warning (10492): VHDL Process Statement warning at WB.vhdl(27): signal "opcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 27
+Warning (10492): VHDL Process Statement warning at WB.vhdl(28): signal "mem_d_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 28
+Warning (10492): VHDL Process Statement warning at WB.vhdl(29): signal "opcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 29
+Warning (10492): VHDL Process Statement warning at WB.vhdl(30): signal "pc_inc_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 30
+Warning (10631): VHDL Process Statement warning at WB.vhdl(19): inferring latch(es) for signal or variable "output", which holds its previous value in one or more paths through the process File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[0]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[1]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[2]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[3]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[4]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[5]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[6]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[7]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[8]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[9]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[10]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[11]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[12]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[13]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[14]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Info (10041): Inferred latch for "output[15]" at WB.vhdl(19) File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/WB.vhdl Line: 19
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "input_vector[0]" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/DUT.vhdl Line: 6
+    Warning (15610): No output dependent on input pin "input_vector[1]" File: C:/Users/sahil/Desktop/Sahil/IITB/Sem 4/EE309/Project 2/EE-309-Project-IITB-RISC-Pipelined/VHDL/DUT.vhdl Line: 6
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 96 warnings
+    Info: Peak virtual memory: 4776 megabytes
+    Info: Processing ended: Tue May 10 23:58:15 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
 
 
