@@ -1,7 +1,5 @@
 library ieee;
 use ieee.std_logic_1164.all;
-library work;
-use work.all;
 
 package misc is 
     component reg_16 is
@@ -18,15 +16,12 @@ package misc is
             EN: in std_logic;
             reset, CLK: in std_logic;
             input: in std_logic;
-            output: out std_logic
+            output: out std_logic;
         );
     end component;  
 end package;
 
-library ieee;
-use ieee.std_logic_1164.all;
-library work;
-use work.all;
+
 entity reg_16 is
     port(
         EN: in std_logic;
@@ -51,15 +46,11 @@ begin
     end process;
 end arch;
 
-library ieee;
-use ieee.std_logic_1164.all;
-library work;
-use work.all;
 entity reg_1 is
     port(
         EN: in std_logic;
         reset, CLK: in std_logic;
-        input: in std_logic;
+        input: in std_logic
         output: out std_logic
 	);
 end entity;

@@ -10,7 +10,7 @@ entity MEM is
 
         ir_out, alu_or_eq_out, rf_d1_out, rf_d2_out, ls_out, se_out,
         se_plus_pc_out, pc_inc_out, mem_d_out: out std_logic_vector(15 downto 0);
-        alu_cy_out, alu_z_out: out std_logic 
+        alu_cy_out, alu_z_out: out std_logic; 
     );
 end entity;
 
@@ -32,8 +32,8 @@ begin
     port map(
         clk=> clk,
         mem_a => alu_or_eq_in,
-        mem_din=> rf_d1_in,
-        opcode => ir_sig(15 downto 12),
+        mem_din=> rf_d1,
+        opcode => ir_sig(15 downto 12);
         d_out=> mem_d_out
     );
     
@@ -48,8 +48,8 @@ begin
             se_plus_pc_out <= (others => '0');
             rf_d1_out <= (others => '0');
             rf_d2_out <= (others => '0');
-            alu_cy_out <= '0';
-            alu_z_out <= '0';
+            alu_cy_out <= (others => '0');
+            alu_z_out <= (others => '0');
             alu_or_eq_out<= (others => '0');
 
         elsif CLK'event and CLK='0' then
@@ -58,7 +58,7 @@ begin
                 ir_out <= ir_in;
                 ls_out <= ls_in;
                 se_out <= se_in;
-                se_plus_pc_out <= se_plus_pc_in;
+                se_plus_pc_out <= se_plus_pc_in,   
                 rf_d1_out <= rf_d1_in;
                 rf_d2_out <= rf_d2_in;
                 alu_cy_out <= alu_cy_in;
