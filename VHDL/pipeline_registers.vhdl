@@ -76,7 +76,7 @@ end entity;
 architecture arch of pip_reg1 is
     signal enable: std_logic := '1';
     -- signal reset: std_logic := '0';
-
+begin
     enable <= EN;
 
     ir_reg: reg_16
@@ -131,7 +131,7 @@ architecture arch of pip_reg2 is
     signal enable: std_logic := '1';
     -- signal reset: std_logic := '0';
     -- signal alu_cy_sig, alu_z_sig: std_logic;
-
+begin
     enable <= EN;
     -- alu_cy_sig <= alu_cy_in;
 
@@ -205,7 +205,7 @@ architecture arch of pip_reg3 is
     signal enable: std_logic := '1';
     -- signal reset: std_logic := '0';
     -- signal alu_cy_sig, alu_z_sig: std_logic;
-
+begin
     enable <= EN;
     -- alu_cy_sig <= alu_cy_in;
 
@@ -297,7 +297,7 @@ architecture arch of pip_reg4 is
     signal enable: std_logic := '1';
     -- signal reset: std_logic := '0';
     -- signal alu_cy_sig, alu_z_sig: std_logic;
-
+begin
     enable <= EN;
     -- alu_cy_sig <= alu_cy_in;
 
@@ -417,7 +417,7 @@ architecture arch of pip_reg5 is
     signal enable: std_logic := '1';
     -- signal reset: std_logic := '0';
     -- signal alu_cy_sig, alu_z_sig: std_logic;
-
+begin
     enable <= EN;
     -- alu_cy_sig <= alu_cy_in;
 

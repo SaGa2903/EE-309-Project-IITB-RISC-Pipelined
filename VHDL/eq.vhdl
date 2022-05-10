@@ -8,7 +8,6 @@ entity eq is
 		eq2: in std_logic_vector(15 downto 0);-- rf_d2
 		eq3: in std_logic_vector(15 downto 0); -- pc_inc
 		eq4: in std_logic_vector(15 downto 0);-- se+pc
-
 		eq_out: out std_logic_vector(15 downto 0));
 		
 end entity;
